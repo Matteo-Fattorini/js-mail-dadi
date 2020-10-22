@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="main.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email check</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="minigames one">
+        <h1>Verifica la tua mail</h1>
+        <input
+          type="text"
+          name="mail_verification"
+          id="mail"
+          placeholder="latuamail@gmail.com"
+        />
+        <button id="verify">Verifica Mail</button>
+        <div id="result">
+          <h1 id="result-text">prova</h1>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="minigames two">
+          <div id="boxOne" class="playerBox">
+            <h1 id="playerOne">Giocatore Uno</h1>
+            <div id="rollOne"></div>
+          </div>
+          <div id="boxTwo" class="playerBox">
+            <h1 id="playerTwo">Giocatore Due</h1>
+            <div id="rollTwo"></div>
+          </div>
+        </div>
+        <div id="higher">Chi Vincerà?</div>
+        <button id="throw">Tira i Dadi!</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -12,6 +12,7 @@ var approvedMails = [
 //!variabili
 
 // bottone di verifica mail
+
 var btnEl = document.getElementById("verify");
 
 //resultbox
@@ -29,14 +30,17 @@ btnEl.addEventListener("click", function () {
 
   //confronto la mail con quelle approvate
 
+  var match = false;
+
   for (i = 0; i < approvedMails.length; i++) {
     if (customerMail == approvedMails[i]) {
+      match = true;
+    }
+
+    if (match) {
       resultBoxEl.style.display = "block";
       resultBoxEl.style.backgroundColor = "green";
       resultTextEl.innerHTML = "Accesso Approvato";
-
-      // fermati se la trovi
-      i = approvedMails.length;
     } else {
       resultBoxEl.style.display = "block";
       resultBoxEl.style.backgroundColor = "red";
@@ -70,14 +74,16 @@ var boxPlayerTwo = document.getElementById("boxTwo");
 //aggiungo click
 dicesBtnEl.addEventListener("click", function () {
   //tiro i dadi giocatore 1
-  rollOne.innerHTML = Math.floor(Math.random() * (6 - 1) + 1);
+  var rndnmbOne = Math.floor(Math.random() * (6 - 1) + 1);
+  rollOne.innerHTML = rndnmbOne;
 
   //tiro i dadi giocatore 2
-  rollTwo.innerHTML = Math.floor(Math.random() * (6 - 1) + 1);
+  var rndnmbTwo = Math.floor(Math.random() * (6 - 1) + 1);
+  rollTwo.innerHTML = rndnmbTwo;
 
   // confronto i risultati
 
-  //?se vince il giocatore Uno
+  //?vince il giocatore Uno
   if (parseInt(rollOne.innerHTML) > parseInt(rollTwo.innerHTML)) {
     resultDice.innerHTML = "Ha vinto il giocatore Uno!";
     boxPlayerOne.style.backgroundColor = "lightgreen";
